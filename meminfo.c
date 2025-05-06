@@ -282,10 +282,10 @@ int get_cgroup(int pid, char* out, size_t outlen)
         return -errno;
     }
 
-    char line[256];
+    char line[PATH_LEN];
     while (fgets(line, sizeof(line), f)) {
         int id;
-        char cgroup_path[256];
+        char cgroup_path[PATH_LEN];
 
         //  Strip newline and null terminate
         size_t len = strlen(line);
